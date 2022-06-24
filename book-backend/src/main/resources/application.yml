@@ -1,0 +1,21 @@
+server:
+  servlet:
+    encoding:
+      charset: utf-8 #들어오는 data 전부 utf-8 
+      enabled: true
+
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+
+  jpa:
+    open-in-view: true #lazy loading 과 관련 
+    hibernate:
+      ddl-auto: create # create, update, none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl #내가 적은 이름대로 column명 생성
+    show-sql: true
